@@ -1,5 +1,5 @@
 //
-//  FEAppDelegate.h
+//  FESouYeViewController.h
 //  UIStarty
 //
 //  Created by chenjianjun on 13-4-7.
@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FEAppDelegate : UIResponder <UIApplicationDelegate>
-
-@property (strong, nonatomic) UIWindow *window;
+@interface FESouYeViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITableView *tableTest;
 
 @end
