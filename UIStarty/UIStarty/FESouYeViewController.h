@@ -10,5 +10,6 @@
 
 @interface FESouYeViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITableView *tableTest;
+@property (weak, nonatomic) IBOutlet UIWebView *webview;
 
 @end

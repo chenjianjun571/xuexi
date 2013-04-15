@@ -15,17 +15,37 @@
 @implementation FESouYeViewController
 
 @synthesize tableTest = _tableTest;
+@synthesize webview = _webview;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    //[self setExtraCellLineHidden:_tableTest];
+    
+    UIView *view = [UIView new];
+    view.backgroundColor = [UIColor clearColor];
+    [_tableTest setTableFooterView:view];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)call:(id)sender {
+//    NSString *phoneNum = @"10086";
+//    
+//    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"tel://%@",phoneNum]];
+//    
+//    [[UIApplication sharedApplication] openURL:url];
+    
+    
+    NSURL *url = [NSURL URLWithString:@"tel:11111111"];
+    
+    [_webview loadRequest:[NSURLRequest requestWithURL:url]];
 }
 
 //- (IBAction)jump:(UIButton *)sender {
@@ -39,6 +59,17 @@
 ////    [self presentModalViewController:next animated:YES];
 //}
 
+- (void)setExtraCellLineHidden: (UITableView *)tableView
+
+{
+    
+    UIView *view = [UIView new];
+    
+    view.backgroundColor = [UIColor clearColor];
+    
+    [tableView setTableFooterView:view];
+}
+
 - (NSInteger) numberOfSectionsInTableView:(UITableView*) tables
 {
     return 2;
@@ -47,6 +78,7 @@
 
 - (NSInteger)tableView:(UITableView*)tableview numberOfRowsInSection:(NSInteger)section
 {
+    //_tableTest.separatorStyle=UITableViewCellSeparatorStyleNone;
     return 1;
 }
 
